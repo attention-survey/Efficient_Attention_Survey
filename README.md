@@ -1,7 +1,8 @@
 # A Survey of Efficient Attention Methods
 
 **A Survey of Efficient Attention Methods: Hardware-efficient, Sparse, Compact, and Linear Attention**  
-**Paper Link:** https://attention-survey.github.io/files/Attention_Survey.pdf
+**PDF**: https://attention-survey.github.io/files/Attention_Survey.pdf  
+Paper webpage: https://attention-survey.github.io
 
 ![](./png_figs/fig2.png)
 
@@ -11,7 +12,7 @@ This paper provides a comprehensive survey of **Efficient Attention Methods**, c
 
 ## Updates
 
- - **[2025/8/20]** 🎉 Our survey paper is now publicly available on [GitHub](./resources/paper.pdf)! If you do find our resources helpful, please [cite our paper](#citation).
+ - **[2025/8/19]** 🎉 Our survey paper is now publicly available on [GitHub](https://attention-survey.github.io/files/Attention_Survey.pdf)! If you do find our resources helpful, please [cite our paper](#citation).
 
 -----
 
@@ -116,7 +117,7 @@ Based on the presence of these gates, we can classify linear attention methods a
 
 3.  **Linear Attention with Forget and Select Gates**
 
-    📝 This table compares methods that utilize both forget gate and select gate. 👇
+    📝 This table compares methods that utilize both the forget gate and the select gate. 👇
 
     ![](./png_figs/table6.png)
     
