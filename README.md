@@ -11,7 +11,7 @@ This survey provides a comprehensive overview of **Efficient Attention Methods**
 
 -----
 
-## 📅 Updates
+## Updates
 
  - **[2025/8/20]** 🎉 Our survey paper is now publicly available on [GitHub](./resources/paper.pdf)! If you do find our resources helpful, please [cite our paper](#citation).
 
@@ -46,7 +46,7 @@ The table below summarizes various hardware-efficient attention methods. 👇
 
 -----
 
-### Class2: Compact Attention Methods
+## Class2: Compact Attention
 
 💡 **Core Idea**: Compressing the KV cache
 of attention by weight sharing or low rank decomposition while keeping computational
@@ -65,7 +65,7 @@ cost unchanged, as with a full-sized KV cache.
 
 -----
 
-### Class3: Sparse Attention
+## Class3: Sparse Attention
 
 💡 **Core Idea**: Selectively performing certain computations in attention while omitting others.
 
@@ -81,7 +81,7 @@ The table below summarizes various sparse attention methods. 👇
 
 -----
 
-## Class4: Linear Attention Methods
+## Class4: Linear Attention
 
 💡 **Core Idea**: Modifying the
 computational logic of attention to reduce its complexity to $O(N)$. 
@@ -136,7 +136,7 @@ A unique approach, **Test-Time Training (TTT)**, treats the hidden states of lin
 
 -----
 
-## 📜 Citation
+## Citation
 
 If you find our work helpful, please consider citing our paper:
 
