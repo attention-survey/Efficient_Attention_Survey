@@ -1,13 +1,11 @@
-# Efficient Attention Methods: A Comprehensive Survey
+# A Survey of Efficient Attention Methods
 
-Efficient Attention Methods: A Comprehensive Survey  
-Paper Link: https://github.com/attention-survey/Efficient_Attention_Survey/blob/main/resource/Attention_Survey.pdf
-
-
+**A Survey of Efficient Attention Methods: Hardware-efficient, Sparse, Compact, and Linear Attention**  
+**Paper Link:** https://github.com/attention-survey/Efficient_Attention_Survey/blob/main/resource/Attention_Survey.pdf
 
 ![](./png_figs/fig2.png)
 
-This survey provides a comprehensive overview of **Efficient Attention Methods**, categorizing them into four main classes.
+This paper provides a comprehensive survey of **Efficient Attention Methods**, categorizing them into four classes.
 
 -----
 
@@ -15,20 +13,18 @@ This survey provides a comprehensive overview of **Efficient Attention Methods**
 
  - **[2025/8/20]** 🎉 Our survey paper is now publicly available on [GitHub](./resources/paper.pdf)! If you do find our resources helpful, please [cite our paper](#citation).
 
-
 -----
 
 ## Class 1: Hardware-Efficient Attention
 
-💡 **Core Idea**: Accelerate attention by leveraging
-hardware characteristics.
+💡 **Core Idea**: Accelerate attention by leveraging hardware characteristics.
 
 📝 **Overall Formulations**: 
 
-Hardware-Efficient Attention of the prefilling stage can be formulated as:
+Hardware-Efficient Attention for the prefilling stage can be formulated as:
  <img src="./png_figs/formula1.png" width="50%" height="50%">
 
-Hardware-Efficient Attention of the decoding stage can be formulated as:
+Hardware-Efficient Attention for the decoding stage can be formulated as:
  <img src="./png_figs/formula2.png" width="50%" height="50%">
 
  ---
@@ -48,9 +44,7 @@ The table below summarizes various hardware-efficient attention methods. 👇
 
 ## Class2: Compact Attention
 
-💡 **Core Idea**: Compressing the KV cache
-of attention by weight sharing or low rank decomposition while keeping computational
-cost unchanged, as with a full-sized KV cache. 
+💡 **Core Idea**: Compressing the KV cache of attention by weight sharing or low rank decomposition while keeping computational cost unchanged, as with a full-sized KV cache. 
 
 📝 **Overall Formulations**: 
 
@@ -58,7 +52,7 @@ cost unchanged, as with a full-sized KV cache.
 
 ---
 
- Below is a comparison of various approaches in compact attention. 👇
+ Below is a summarization of various approaches in compact attention. 👇
 
 ![](./png_figs/table3.png)
 
@@ -67,7 +61,7 @@ cost unchanged, as with a full-sized KV cache.
 
 ## Class3: Sparse Attention
 
-💡 **Core Idea**: Selectively performing certain computations in attention while omitting others.
+💡 **Core Idea**: Selectively performing a subset of computations in attention while omitting others.
 
 📝 **Overall Formulations**: 
 
@@ -83,8 +77,7 @@ The table below summarizes various sparse attention methods. 👇
 
 ## Class4: Linear Attention
 
-💡 **Core Idea**: Modifying the
-computational logic of attention to reduce its complexity to $O(N)$. 
+💡 **Core Idea**: Redesigning the computational formulation of attention to achieve \(\mathcal{O}(N)\) time complexity. 
 
 📝 **Overall Formulations**: 
 
@@ -93,7 +86,7 @@ computational logic of attention to reduce its complexity to $O(N)$.
 ---
 ### Computational Forms
 
-Linear Attention can be implemented in three primary forms: **parallel**, **recurrent**, and **chunkwise**.
+Linear Attention can be implemented in three forms: **parallel**, **recurrent**, and **chunkwise**.
 
 ![](./png_figs/fig3.png)
 
@@ -138,7 +131,7 @@ A unique approach, **Test-Time Training (TTT)**, treats the hidden states of lin
 
 ## Citation
 
-If you find our work helpful, please consider citing our paper:
+If you find our work helpful, please cite our paper:
 
 ```
 @article{zhang2025efficient,
