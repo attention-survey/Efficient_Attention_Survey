@@ -143,7 +143,7 @@ If you find our work helpful, please consider citing our paper:
 ```
 @article{zhang2025efficient,
   title={Efficient Attention Methods: A Comprehensive Survey},
-  author={Jintao Zhang and Rundong Su and Chunyu Liu and Jia Wei and Ziteng Wang and Pengle Zhang and Haoxu Wang and Huiqiang Jiang and Haofeng Huang and Chendong Xiang and Haocheng Xi and Shuo Yang and Xingyang Li and Yuezhou Hu and Tianyu Fu and Tianchen Zhao and Yicheng Zhang and Youhe Jiang and Chang Chen and Kai Jiang and Huayu Chen and Min Zhao and Xiaoming Xu and Jun Zhu and Jianfei Chen},
+  author={Zhang, Jintao and Su, Rundong and Liu, Chunyu and Wei, Jia and Wang, Ziteng and Zhang, Pengle and Wang, Haoxu and Jiang, Huiqiang and Huang, Haofeng and Xiang, Chendong and Xi, Haocheng and Yang, Shuo and Li, Xingyang and Hu, Yuezhou and Fu, Tianyu and Zhao, Tianchen and Zhang, Yicheng and Jiang, Youhe and Chen, Chang and Jiang, Kai and Chen, Huayu and Zhao, Min and Xu, Xiaoming and Zhu, Jun and Chen, Jianfei},
   year={2025}
 }
 ```
