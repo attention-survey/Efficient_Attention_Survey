@@ -1,107 +1,138 @@
-# A Survey of Efficient Attention Methods
+# Efficient Attention Methods: A Comprehensive Survey
 
-![](./images/overview.jpg)
+Efficient Attention Methods: A Comprehensive Survey  
+Paper Link: https://github.com/attention-survey/Efficient_Attention_Survey/blob/main/resource/Attention_Survey.pdf
 
-The vanilla attention in Transformers has a quadratic complexity, $O(N^2)$, with respect to sequence length $N$. This creates a significant computational and memory bottleneck for long sequences. This survey provides a comprehensive overview of **Efficient Attention Methods** designed to tackle this challenge, categorizing them into four main families.
 
 
-<!-- -----
+![](./png_figs/fig2.png)
 
-## 👥 About the Team
-
-*(Your team information here)* -->
+This survey provides a comprehensive overview of **Efficient Attention Methods**, categorizing them into four main classes.
 
 -----
 
 ## 📅 Updates
 
-  - **[2025/8/20]** 🎉 Our survey paper is now publicly available on GitHub\!
+ - **[2025/8/20]** 🎉 Our survey paper is now publicly available on [GitHub](./resources/paper.pdf)! If you do find our resources helpful, please [cite our paper](#citation).
+
 
 -----
 
-## ⚡ Efficient Attention Methods
+## Class 1: Hardware-Efficient Attention
 
-![](./images/notation.jpg)
+💡 **Core Idea**: Accelerate attention by leveraging
+hardware characteristics.
 
-This table summarizes some basic notations used throughout the survey.
+📝 **Overall Formulations**: 
 
-### ⚙️ Hardware-Efficient Methods
+Hardware-Efficient Attention of the prefilling stage can be formulated as:
+ <img src="./png_figs/formula1.png" width="50%" height="50%">
 
-💡 **Core Idea**: Speed up attention by tailoring computations to specific hardware features, primarily by optimizing memory access patterns.
+Hardware-Efficient Attention of the decoding stage can be formulated as:
+ <img src="./png_figs/formula2.png" width="50%" height="50%">
 
-A prominent example is **FlashAttention**, which reorders the computation to minimize costly memory I/O between the GPU's high-bandwidth memory (HBM) and on-chip SRAM. The diagram below illustrates its core mechanism. 👇
+ ---
 
-![](./images/flash.jpg)
+An example is **FlashAttention**, which tiles $Q, K, V$ to progressively compute the attention output $O$. Such a strategy avoids the I/O of $S, P$ matrices in the shape of $N \times N$.
 
-📝 The table below highlights key hardware-efficient methods. 👇
+ <img src="./png_figs/fig1.png" width="70%" height="70%">
 
-![](./images/hard_tables.jpg)
+---
 
------
+The table below summarizes various hardware-efficient attention methods. 👇
 
-### ✨ Sparse Attention
+![](./png_figs/table2.png)
 
-💡 **Core Idea**: Reduce the computational load by strategically skipping some attention calculations, focusing only on a sparse subset of key-value pairs.
-
-📝 Sparse Attention methods can be divided into two main categories: **Pattern-Based** (fixed sparsity) and **Dynamic** (input-dependent sparsity). The table below compares various approaches. 👇
-
-![](./images/sparse.jpg)
 
 -----
 
-### 🗜️ Compact Attention Methods
+### Class2: Compact Attention Methods
 
-💡 **Core Idea**: Reduce memory overhead by compressing the Key-Value (KV) cache using techniques like weight sharing, pruning, or low-rank decomposition.
+💡 **Core Idea**: Compressing the KV cache
+of attention by weight sharing or low rank decomposition while keeping computational
+cost unchanged, as with a full-sized KV cache. 
 
-📝 Below is a comparison of various approaches in compact attention. 👇
+📝 **Overall Formulations**: 
 
-![](./images/compact_table.jpg)
+ <img src="./png_figs/formula3.png" width="50%" height="50%">
+
+---
+
+ Below is a comparison of various approaches in compact attention. 👇
+
+![](./png_figs/table3.png)
+
 
 -----
 
-### 🚀 Linear Attention Methods
+### Class3: Sparse Attention
 
-💡 **Core Idea**: Modify the computational logic of attention to reduce its complexity from quadratic, $O(N^2)$, to linear, $O(N)$.
+💡 **Core Idea**: Selectively performing certain computations in attention while omitting others.
 
-Linear Attention is a diverse category with several key design variations.
+📝 **Overall Formulations**: 
 
-#### Computational Forms
+ <img src="./png_figs/formula4.png" width="90%" height="90%">
 
-Linear Attention can be implemented in three primary forms: **parallel**, **recurrent**, and **chunkwise**, each offering different trade-offs for training and inference.
+ ---
 
-![](./images/forms.jpg)
+The table below summarizes various sparse attention methods. 👇
 
-#### Gating Mechanisms
+![](./png_figs/table4.png)
 
-To enhance their expressive power, many linear attention variants incorporate gating mechanisms, such as **forget gates** and **select gates**.
+-----
 
-![](./images/gates.jpg)
+## Class4: Linear Attention Methods
+
+💡 **Core Idea**: Modifying the
+computational logic of attention to reduce its complexity to $O(N)$. 
+
+📝 **Overall Formulations**: 
+
+ <img src="./png_figs/formula5.png" width="50%" height="50%">
+
+---
+### Computational Forms
+
+Linear Attention can be implemented in three primary forms: **parallel**, **recurrent**, and **chunkwise**.
+
+![](./png_figs/fig3.png)
+
+---
+
+### Gating Mechanisms
+
+Many linear attention methods incorporate **forget gates** and **select gates**.
+
+ <img src="./png_figs/fig4.png" width="70%" height="70%">
 
 Based on the presence of these gates, we can classify linear attention methods as follows:
 
 1.  **Naive Linear Attention (No Gates)**
 
-    📝 The table below highlights key methods in this category. 👇
+    📝 The table below summarizes naive attention methods. 👇
 
-    ![](./images/naive.jpg)
+    ![](./png_figs/table5.png)
+
 
 2.  **Linear Attention with a Forget Gate**
 
-    📝 This table compares notable methods that use a forget gate to manage state information. 👇
+    📝 This table compares methods that use a forget gate. 👇
 
-    ![](./images/forget.jpg)
+    ![](./png_figs/table6.png)
+
 
 3.  **Linear Attention with Forget and Select Gates**
 
-    📝 This table compares methods that utilize both gate types for more sophisticated state control. 👇
+    📝 This table compares methods that utilize both forget gate and select gate. 👇
 
-    ![](./images/select.jpg)
+    ![](./png_figs/table6.png)
+    
 
-#### A Special Case: Test-Time Training (TTT)
+### A Special Case: Test-Time Training (TTT)
 
-A unique approach, **Test-Time Training (TTT)**, treats the hidden states of linear attention as learnable parameters that are optimized during the inference phase.
+A unique approach, **Test-Time Training (TTT)**, treats the hidden states of linear attention as learnable parameters.
 
-![](./images/TTT.jpg)
+ <img src="./png_figs/fig5.png" width="70%" height="70%">
 
 -----
 
