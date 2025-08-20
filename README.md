@@ -1,7 +1,7 @@
 # A Survey of Efficient Attention Methods
 
 **A Survey of Efficient Attention Methods: Hardware-efficient, Sparse, Compact, and Linear Attention**  
-**Paper Link:** https://github.com/attention-survey/Efficient_Attention_Survey/blob/main/resource/Attention_Survey.pdf
+**Paper Link:** https://attention-survey.github.io/files/Attention_Survey.pdf
 
 ![](./png_figs/fig2.png)
 
