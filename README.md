@@ -34,7 +34,7 @@ Where $\Psi(\cdot), \Theta(\cdot)$ are KV cache preprocess functions.
 
  ---
 
-An example is **FlashAttention**, which tiles $Q, K, V$ to progressively compute the attention output $O$. Such a strategy avoids the I/O of $S, P$ matrices in the shape of $N \times N$.
+An example is FlashAttention, which tiles $Q, K, V$ to progressively compute the attention output $O$. Such a strategy avoids the I/O of $S, P$ matrices in the shape of $N \times N$.
 
  <img src="./png_figs/fig1.png" width="70%" height="70%">
 
