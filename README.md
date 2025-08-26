@@ -25,8 +25,12 @@ This paper provides a comprehensive survey of **Efficient Attention Methods**, c
 Hardware-Efficient Attention for the prefilling stage can be formulated as:
  <img src="./png_figs/formula1.png" width="50%" height="50%">
 
+Where $\Psi(\cdot), \Theta(\cdot)$ are preprocess functions to accelerate computation, e.g., quantization functions in SageAttention.
+
 Hardware-Efficient Attention for the decoding stage can be formulated as:
  <img src="./png_figs/formula2.png" width="50%" height="50%">
+
+Where $\Psi(\cdot), \Theta(\cdot)$ are KV cache preprocess functions.
 
  ---
 
@@ -36,7 +40,7 @@ An example is **FlashAttention**, which tiles $Q, K, V$ to progressively compute
 
 ---
 
-The table below summarizes various hardware-efficient attention methods. 👇
+The Table below summarizes various hardware-efficient attention methods. 👇
 
 ![](./png_figs/table2.png)
 
@@ -53,7 +57,7 @@ The table below summarizes various hardware-efficient attention methods. 👇
 
 ---
 
- Below is a summarization of various approaches in compact attention. 👇
+The Table Below is a summarization of various compact attention approaches. 👇
 
 ![](./png_figs/table3.png)
 
@@ -70,7 +74,7 @@ The table below summarizes various hardware-efficient attention methods. 👇
 
  ---
 
-The table below summarizes various sparse attention methods. 👇
+The Table below summarizes various sparse attention methods. 👇
 
 ![](./png_figs/table4.png)
 
@@ -103,21 +107,21 @@ Based on the presence of these gates, we can classify linear attention methods a
 
 1.  **Naive Linear Attention (No Gates)**
 
-    📝 The table below summarizes naive attention methods. 👇
+    📝 The Table below summarizes naive attention methods. 👇
 
     ![](./png_figs/table5.png)
 
 
 2.  **Linear Attention with a Forget Gate**
 
-    📝 This table compares methods that use a forget gate. 👇
+    📝 This Table compares methods that use a forget gate. 👇
 
     ![](./png_figs/table6.png)
 
 
 3.  **Linear Attention with Forget and Select Gates**
 
-    📝 This table compares methods that utilize both the forget gate and the select gate. 👇
+    📝 This Table compares methods that utilize both the forget gate and the select gate. 👇
 
     ![](./png_figs/table6.png)
     
