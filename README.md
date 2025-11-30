@@ -16,18 +16,18 @@ This paper provides a comprehensive survey of **Efficient Attention Methods**, c
 
 -----
 
-## Class 1: Hardware-Efficient Attention
+## Class 1: Hardware-efficient Attention
 
 💡 **Core Idea**: Accelerate attention by leveraging hardware characteristics.
 
 📝 **Overall Formulations**: 
 
-Hardware-Efficient Attention for the prefilling stage can be formulated as:
+Hardware-efficient attention for the prefilling stage can be formulated as:
  <img src="./png_figs/formula1.png" width="50%" height="50%">
 
 Where $\Psi(\cdot), \Theta(\cdot)$ are preprocess functions to accelerate computation, e.g., quantization functions in SageAttention.
 
-Hardware-Efficient Attention for the decoding stage can be formulated as:
+Hardware-efficient attention for the decoding stage can be formulated as:
  <img src="./png_figs/formula2.png" width="50%" height="50%">
 
 Where $\Psi(\cdot), \Theta(\cdot)$ are KV cache preprocess functions.
@@ -139,9 +139,8 @@ A unique approach, **Test-Time Training (TTT)**, treats the hidden states of lin
 If you find our work helpful, please cite our paper:
 
 ```
-@article{zhang2025efficient,
+@article{zhangsurvey,
   title={A Survey of Efficient Attention Methods: Hardware-efficient, Sparse, Compact, and Linear Attention},
-  author={Zhang, Jintao and Su, Rundong and Liu, Chunyu and Wei, Jia and Wang, Ziteng and Zhang, Pengle and Wang, Haoxu and Jiang, Huiqiang and Huang, Haofeng and Xiang, Chendong and Xi, Haocheng and Yang, Shuo and Li, Xingyang and Hu, Yuezhou and Fu, Tianyu and Zhao, Tianchen and Zhang, Yicheng and Jiang, Youhe and Chen, Chang and Jiang, Kai and Chen, Huayu and Zhao, Min and Xu, Xiaoming and Zhu, Jun and Chen, Jianfei},
-  year={2025}
+  author={Zhang, Jintao and Su, Rundong and Liu, Chunyu and Wei, Jia and Wang, Ziteng and Zhang, Pengle and Wang, Haoxu and Jiang, Huiqiang and Huang, Haofeng and Xiang, Chendong and others}
 }
 ```
